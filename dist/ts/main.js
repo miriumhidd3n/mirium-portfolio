@@ -1,22 +1,20 @@
 "use strict";
-console.log('MIRIUM.HIDD3N // SYSTEM ONLINE');
+
 const bootScreen = document.querySelector('#boot-screen');
 const enterButton = document.querySelector('#enter-button');
-/*
- * BOOT SEQUENCE
- */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        bootScreen?.classList.add('hidden');
-    }, 2400);
-});
-/*
- * ENTER BUTTON
- */
+console.log('MIRIUM.HIDD3N // TYPESCRIPT ONLINE');
+if (!bootScreen) {
+    console.error('Boot screen was not found.');
+}
+else {
+    console.log('Boot screen detected.');
+    window.setTimeout(() => {
+        bootScreen.classList.add('hidden');
+        console.log('Boot sequence complete.');
+    }, 3000);
+}
 enterButton?.addEventListener('click', () => {
-    document
-        .querySelector('#signal')
-        ?.scrollIntoView({
+    document.querySelector('#signal')?.scrollIntoView({
         behavior: 'smooth'
     });
 });
