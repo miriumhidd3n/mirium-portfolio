@@ -1,138 +1,470 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
 
-    <meta
-        name="description"
-        content="MIRIUM.HIDD3N — creative developer portfolio."
-    >
+<meta charset="UTF-8">
 
-    <title>MIRIUM.HIDD3N</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <link rel="stylesheet" href="/src/css/reset.css">
-    <link rel="stylesheet" href="/src/css/variables.css">
-    <link rel="stylesheet" href="/src/css/global.css">
-    <link rel="stylesheet" href="/src/css/hero.css">
+<meta
+    name="description"
+    content="MIRIUM.HIDD3N — creative developer portfolio."
+>
+
+<title>MIRIUM.HIDD3N</title>
+
+
+<!-- =========================================
+     CSS
+     ========================================= -->
+
+<link rel="stylesheet" href="/src/css/reset.css">
+<link rel="stylesheet" href="/src/css/variables.css">
+<link rel="stylesheet" href="/src/css/global.css">
+<link rel="stylesheet" href="/src/css/hero.css">
+
+
 </head>
 
 <body>
 
-    <!-- BOOT SCREEN -->
 
-    <div class="boot-screen" id="boot-screen">
+<!-- =========================================
+     BOOT SCREEN
+     ========================================= -->
 
-        <div class="boot-content">
+<div
+    class="boot-screen"
+    id="boot-screen"
+>
 
-            <p class="boot-line">
-                INITIALIZING...
-            </p>
+    <div class="boot-content">
 
-            <p class="boot-line">
-                LOADING MEMORY...
-            </p>
+        <p class="boot-line">
+            INITIALIZING...
+        </p>
 
-            <p class="boot-line">
-                SIGNAL DETECTED.
-            </p>
+        <p class="boot-line">
+            LOADING MEMORY...
+        </p>
 
-        </div>
+        <p class="boot-line">
+            SIGNAL DETECTED.
+        </p>
 
     </div>
 
+</div>
 
-    <!-- MAIN WEBSITE -->
 
-    <main id="site">
+<!-- =========================================
+     HERO
+     ========================================= -->
 
-        <section class="hero" id="hero">
+<main
+    id="hero"
+    class="hero"
+>
 
-            <div class="hero-header">
+    <header class="hero-header">
 
-                <span class="logo">
-                    M/H
+        <div class="identity-mark">
+            M/H
+        </div>
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+    </header>
+
+
+    <section class="hero-content">
+
+        <p class="hero-kicker">
+            CODE / ART / EXPERIMENTS
+        </p>
+
+
+        <h1 class="hero-title">
+            MIRIUM<span>.HIDD3N</span>
+        </h1>
+
+
+        <p class="hero-tagline">
+            I MAKE DIGITAL WORLDS.
+        </p>
+
+
+        <button
+            id="enter-button"
+            class="enter-button"
+            type="button"
+        >
+
+            ENTER
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+    </section>
+
+
+    <footer class="hero-footer">
+
+        <div>
+            TYPESCRIPT / HTML / CSS
+        </div>
+
+        <div>
+            2026
+        </div>
+
+    </footer>
+
+</main>
+
+
+<!-- =========================================
+     PORTFOLIO
+     ========================================= -->
+
+<main id="site">
+
+
+    <!-- =====================================
+         SIGNAL
+         ===================================== -->
+
+    <section
+        id="signal"
+        class="signal"
+    >
+
+        <div class="signal-inner">
+
+
+            <p class="signal-label">
+                // SIGNAL DETECTED
+            </p>
+
+
+            <h2 class="signal-title">
+
+                I BUILD TO
+
+                <span>
+                    FIND MYSELF.
                 </span>
 
-                <span class="system-status">
-                    SYSTEM ONLINE
+            </h2>
+
+
+            <div class="signal-line"></div>
+
+
+            <p class="signal-description">
+
+                I don't want to simply build websites.
+                I want to create digital spaces that feel
+                like they belong to someone.
+
+            </p>
+
+
+            <p class="signal-description">
+
+                Code is the medium.
+                Creativity is the signal.
+
+            </p>
+
+
+            <div class="signal-meta">
+
+                <span>
+                    CREATIVE DEVELOPER
+                </span>
+
+                <span>
+                    JOHANNESBURG / 2026
                 </span>
 
             </div>
 
 
-            <div class="hero-content">
+        </div>
 
-                <p class="hero-label">
-                    CODE / ART / EXPERIMENTS
-                </p>
+    </section>
 
-                <h1 class="hero-title">
-                    MIRIUM<span>.HIDD3N</span>
-                </h1>
 
-                <p class="hero-description">
-                    I MAKE DIGITAL WORLDS.
-                </p>
+    <!-- =====================================
+         WORK / ARCHIVE
+         ===================================== -->
 
-                <button
-                    class="enter-button"
-                    id="enter-button"
-                    type="button"
+    <section
+        id="work"
+        class="work"
+    >
+
+        <div class="work-inner">
+
+
+            <!-- WORK HEADER -->
+
+            <header class="work-header">
+
+                <div>
+
+                    <p class="work-label">
+                        // ARCHIVE_01
+                    </p>
+
+
+                    
+                    <h2 class="work-title">
+
+                        SELECTED
+
+                        <span>
+                            WORK.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="work-index">
+                    03 / 03
+                </div>
+
+            </header>
+
+
+            <!-- PROJECT LIST -->
+
+            <div class="project-list">
+
+
+                <!-- PROJECT 01 -->
+
+                <article
+                    class="project"
+                    data-project="01"
                 >
-                    <span>ENTER</span>
-                    <span>→</span>
-                </button>
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            WEB EXPERIENCE
+                        </p>
+
+
+                        <h3 class="project-title">
+
+                            PROJECT
+
+                            <span>
+                                ONE
+                            </span>
+
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            A digital experience built around
+                            atmosphere, interaction and identity.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article
+                    class="project"
+                    data-project="02"
+                >
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            CREATIVE DEVELOPMENT
+                        </p>
+
+
+                        <h3 class="project-title">
+
+                            PROJECT
+
+                            <span>
+                                TWO
+                            </span>
+
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            An experiment exploring the relationship
+                            between code and visual expression.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article
+                    class="project"
+                    data-project="03"
+                >
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            EXPERIMENT
+                        </p>
+
+
+                        <h3 class="project-title">
+
+                            PROJECT
+
+                            <span>
+                                THREE
+                            </span>
+
+                        </h3>
+
+
+                        <p class="project-description">
+
+                            A personal experiment designed to
+                            push the boundaries of the interface.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        →
+                    </div>
+
+                </article>
+
 
             </div>
 
 
-            <div class="hero-footer">
+            <!-- WORK FOOTER -->
+
+            <footer class="work-footer">
 
                 <span>
-                    TYPESCRIPT
+                    SCROLL TO EXPLORE
                 </span>
+
 
                 <span>
-                    HTML
+                    WORK / 001—003
                 </span>
 
-                <span>
-                    CSS
-                </span>
-
-                <span>
-                    2026
-                </span>
-
-            </div>
-
-        </section>
+            </footer>
 
 
-        <!-- FUTURE SECTIONS -->
+        </div>
 
-        <section id="signal"></section>
-
-        <section id="work"></section>
-
-        <section id="lab"></section>
-
-        <section id="about"></section>
-
-        <section id="log"></section>
-
-        <section id="contact"></section>
-
-    </main>
+    </section>
 
 
-    <script type="module" src="./dist/ts/main.js"></script>
+    <!-- =====================================
+         CREATIVE LAB
+         ===================================== -->
+
+    <section id="lab"></section>
+
+
+    <!-- =====================================
+         ABOUT
+         ===================================== -->
+
+    <section id="about"></section>
+
+
+    <!-- =====================================
+         LOG
+         ===================================== -->
+
+    <section id="log"></section>
+
+
+    <!-- =====================================
+         CONTACT
+         ===================================== -->
+
+    <section id="contact"></section>
+
+
+</main>
+
+
+<!-- =========================================
+     TYPESCRIPT
+     ========================================= -->
+
+<script
+    type="module"
+    src="./dist/ts/main.js"
+></script>
+
 
 </body>
 

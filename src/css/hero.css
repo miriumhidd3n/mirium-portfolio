@@ -282,4 +282,326 @@
         gap: 0.75rem;
     }
 
+
+
+    /* =========================================
+   WORK / ARCHIVE
+   ========================================= */
+
+.work {
+
+    min-height: 100vh;
+
+    padding: 8rem 2rem;
+
+    position: relative;
+
 }
+
+
+.work-inner {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+/* HEADER */
+
+.work-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 6rem;
+
+}
+
+
+.work-label {
+
+    margin: 0 0 1.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.45;
+
+}
+
+
+.work-title {
+
+    margin: 0;
+
+    font-size: clamp(
+        3rem,
+        8vw,
+        8rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+.work-title span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+.work-index {
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+/* PROJECT LIST */
+
+.project-list {
+
+    border-top: 1px solid currentColor;
+
+    opacity: 0.95;
+
+}
+
+
+.project {
+
+    display: grid;
+
+    grid-template-columns:
+        80px
+        1fr
+        40px;
+
+    gap: 2rem;
+
+    align-items: center;
+
+    padding: 3rem 0;
+
+    border-bottom: 1px solid currentColor;
+
+    opacity: 0.65;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+
+.project:hover {
+
+    opacity: 1;
+
+    transform: translateX(12px);
+
+}
+
+
+.project-number {
+
+    font-family: monospace;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.5;
+
+}
+
+
+.project-type {
+
+    margin: 0 0 0.75rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.45;
+
+}
+
+
+.project-title {
+
+    margin: 0;
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        4rem
+    );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.project-title span {
+
+    opacity: 0.35;
+
+}
+
+
+.project-description {
+
+    max-width: 500px;
+
+    margin: 1.25rem 0 0;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+    opacity: 0.5;
+
+}
+
+
+.project-arrow {
+
+    font-size: 1.5rem;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.project:hover .project-arrow {
+
+    transform: translateX(8px);
+
+}
+
+
+/* FOOTER */
+
+.work-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 3rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.35;
+
+}
+
+
+/* =========================================
+   WORK MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .work {
+
+        padding:
+            6rem
+            1.25rem;
+
+    }
+
+
+    .work-header {
+
+        align-items: flex-start;
+
+        gap: 2rem;
+
+    }
+
+
+    .work-index {
+
+        display: none;
+
+    }
+
+
+    .project {
+
+        grid-template-columns:
+            40px
+            1fr
+            20px;
+
+        gap: 1rem;
+
+        padding: 2.5rem 0;
+
+    }
+
+
+    .project-title {
+
+        font-size: 2.25rem;
+
+    }
+
+
+    .project-description {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .work-footer {
+
+        flex-direction: column;
+
+        gap: 0.75rem;
+
+    }
+
+}
+
+}
+
