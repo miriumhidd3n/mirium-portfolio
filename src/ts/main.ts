@@ -1,24 +1,15 @@
-const bootScreen = document.querySelector<HTMLElement>('#boot-screen');
+console.log("MIRIUM.HIDD3N // TYPESCRIPT ONLINE");
 
-const enterButton =
-    document.querySelector<HTMLButtonElement>('#enter-button');
+const bootScreen = document.getElementById("boot-screen");
 
-console.log('MIRIUM.HIDD3N // TYPESCRIPT ONLINE');
+console.log("Boot screen element:", bootScreen);
 
-if (!bootScreen) {
-    console.error('Boot screen was not found.');
-} else {
-    console.log('Boot screen detected.');
+setTimeout(() => {
+    console.log("Removing boot screen...");
 
-    window.setTimeout(() => {
-        bootScreen.classList.add('hidden');
-
-        console.log('Boot sequence complete.');
-    }, 3000);
-}
-
-enterButton?.addEventListener('click', () => {
-    document.querySelector('#signal')?.scrollIntoView({
-        behavior: 'smooth'
-    });
-});
+    if (bootScreen) {
+        bootScreen.style.opacity = "0";
+        bootScreen.style.visibility = "hidden";
+        bootScreen.style.pointerEvents = "none";
+    }
+}, 3000);
