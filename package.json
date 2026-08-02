@@ -1,16 +1,17 @@
 {
-  "name": "mirium-portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "typescript": "^7.0.2"
-  }
+    "name": "mirium-portfolio",
+    "version": "1.0.0",
+    "description": "MIRIUM.HIDD3N personal creative portfolio",
+    "private": true,
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "devDependencies": {
+        "typescript": "^7.0.2"
+    }
 }

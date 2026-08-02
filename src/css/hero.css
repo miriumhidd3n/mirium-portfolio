@@ -1,0 +1,285 @@
+/* =========================================
+   BOOT SCREEN
+========================================= */
+
+.boot-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--color-background);
+
+    transition:
+        opacity 800ms ease,
+        visibility 800ms ease;
+}
+
+.boot-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.boot-content {
+    width: min(90%, 500px);
+}
+
+.boot-line {
+    margin: 0.5rem 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.75rem;
+
+    opacity: 0;
+
+    animation:
+        boot-line 600ms ease forwards;
+}
+
+.boot-line:nth-child(1) {
+    animation-delay: 300ms;
+}
+
+.boot-line:nth-child(2) {
+    animation-delay: 800ms;
+}
+
+.boot-line:nth-child(3) {
+    animation-delay: 1300ms;
+
+    color: var(--color-accent);
+}
+
+@keyframes boot-line {
+
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100svh;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 2rem;
+
+    max-width: var(--content-width);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.hero-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+
+    color: var(--color-text-muted);
+}
+
+.logo {
+    color: var(--color-text);
+
+    font-weight: bold;
+
+    font-size: 1rem;
+}
+
+.system-status {
+    position: relative;
+
+    padding-left: 1rem;
+}
+
+.system-status::before {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: var(--color-accent);
+
+    box-shadow:
+        0 0 10px var(--color-accent);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1.5rem;
+}
+
+.hero-label {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+}
+
+.hero-title {
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(
+        3rem,
+        10vw,
+        10rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 800;
+}
+
+.hero-title span {
+    color: var(--color-accent);
+}
+
+.hero-description {
+    margin: 0;
+
+    font-size: clamp(
+        1rem,
+        2vw,
+        1.5rem
+    );
+
+    color: var(--color-text-muted);
+}
+
+
+/* =========================================
+   ENTER BUTTON
+========================================= */
+
+.enter-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem 0;
+
+    color: var(--color-text);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.15em;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.enter-button:hover {
+    color: var(--color-accent);
+
+    transform: translateX(8px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.hero-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--color-text-muted);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.1em;
+
+    border-top:
+        1px solid var(--color-border);
+
+    padding-top: 1rem;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 1.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(
+            3rem,
+            16vw,
+            6rem
+        );
+    }
+
+    .hero-footer {
+        flex-wrap: wrap;
+
+        gap: 0.75rem;
+    }
+
+}
