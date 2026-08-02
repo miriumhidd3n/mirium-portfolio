@@ -1,300 +1,529 @@
-/* =========================================
+/* =========================================================
+   MIRIUM.HIDD3N
+   MAIN PORTFOLIO STYLES
+   ========================================================= */
+
+
+/* =========================================================
    BOOT SCREEN
-========================================= */
+   ========================================================= */
 
 .boot-screen {
+
     position: fixed;
+
     inset: 0;
 
-    z-index: 1000;
+    z-index: 9999;
 
-    display: grid;
-    place-items: center;
+    display: flex;
 
-    background: var(--color-background);
+    align-items: center;
+
+    justify-content: center;
+
+    background: #050505;
+
+    color: #f1f1f1;
 
     transition:
-        opacity 800ms ease,
-        visibility 800ms ease;
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
 }
+
 
 .boot-screen.hidden {
+
     opacity: 0;
+
     visibility: hidden;
+
 }
+
 
 .boot-content {
-    width: min(90%, 500px);
+
+    width: min(
+        90%,
+        500px
+    );
+
+    font-family: monospace;
+
 }
 
-.boot-line {
-    margin: 0.5rem 0;
 
-    color: var(--color-text-muted);
+.boot-line {
+
+    margin: 0 0 0.5rem;
 
     font-size: 0.75rem;
 
-    opacity: 0;
+    letter-spacing: 0.15em;
+
+    opacity: 0.7;
 
     animation:
-        boot-line 600ms ease forwards;
+        bootLine 0.5s ease forwards;
+
 }
+
 
 .boot-line:nth-child(1) {
-    animation-delay: 300ms;
+
+    animation-delay: 0.2s;
+
 }
+
 
 .boot-line:nth-child(2) {
-    animation-delay: 800ms;
+
+    animation-delay: 0.8s;
+
 }
+
 
 .boot-line:nth-child(3) {
-    animation-delay: 1300ms;
 
-    color: var(--color-accent);
+    animation-delay: 1.4s;
+
 }
 
-@keyframes boot-line {
+
+@keyframes bootLine {
 
     from {
+
         opacity: 0;
-        transform: translateX(-10px);
+
+        transform:
+            translateX(-10px);
+
     }
 
     to {
-        opacity: 1;
-        transform: translateX(0);
+
+        opacity: 0.7;
+
+        transform:
+            translateX(0);
+
     }
 
 }
 
 
-/* =========================================
+/* =========================================================
    HERO
-========================================= */
+   ========================================================= */
 
 .hero {
+
+    min-height: 100vh;
+
     position: relative;
 
-    min-height: 100svh;
-
-    width: 100%;
-
     display: flex;
+
     flex-direction: column;
 
     justify-content: space-between;
 
     padding: 2rem;
 
-    max-width: var(--content-width);
+    overflow: hidden;
 
-    margin: 0 auto;
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* =========================================================
+   HERO HEADER
+   ========================================================= */
 
 .hero-header {
+
     display: flex;
 
-    justify-content: space-between;
     align-items: center;
 
-    font-size: 0.7rem;
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.identity-mark {
+
+    font-family: monospace;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
 
     letter-spacing: 0.1em;
 
-    color: var(--color-text-muted);
 }
 
-.logo {
-    color: var(--color-text);
-
-    font-weight: bold;
-
-    font-size: 1rem;
-}
 
 .system-status {
-    position: relative;
 
-    padding-left: 1rem;
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.6;
+
 }
 
-.system-status::before {
-    content: "";
 
-    position: absolute;
+.status-dot {
 
-    width: 5px;
-    height: 5px;
+    width: 6px;
 
-    left: 0;
-    top: 50%;
+    height: 6px;
 
-    transform: translateY(-50%);
+    display: inline-block;
 
     border-radius: 50%;
 
-    background: var(--color-accent);
+    background: currentColor;
 
-    box-shadow:
-        0 0 10px var(--color-accent);
+    animation:
+        statusPulse 2s infinite;
+
 }
 
 
-/* =========================================
+@keyframes statusPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.3;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
    HERO CONTENT
-========================================= */
+   ========================================================= */
 
 .hero-content {
-    display: flex;
 
-    flex-direction: column;
+    position: relative;
 
-    align-items: flex-start;
+    z-index: 2;
 
-    gap: 1.5rem;
 }
 
-.hero-label {
+
+.hero-kicker {
+
+    margin: 0 0 1.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.45;
+
+}
+
+
+.hero-title {
+
     margin: 0;
 
-    color: var(--color-text-muted);
+    font-size: clamp(
+        4rem,
+        12vw,
+        12rem
+    );
+
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+
+    font-weight: 700;
+
+}
+
+
+.hero-title span {
+
+    opacity: 0.3;
+
+}
+
+
+.hero-tagline {
+
+    margin: 2rem 0 0;
+
+    font-family: monospace;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.5;
+
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+   ========================================================= */
+
+.enter-button {
+
+    margin-top: 3rem;
+
+    padding:
+        0.9rem
+        1.4rem;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    border: 1px solid currentColor;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-family: monospace;
 
     font-size: 0.7rem;
 
     letter-spacing: 0.15em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
 }
 
-.hero-title {
+
+.enter-button span {
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.enter-button:hover {
+
+    background: currentColor;
+
+    color: #050505;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.enter-button:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   HERO FOOTER
+   ========================================================= */
+
+.hero-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.35;
+
+}
+
+
+/* =========================================================
+   SIGNAL SECTION
+   ========================================================= */
+
+.signal {
+
+    min-height: 100vh;
+
+    padding:
+        10rem
+        2rem;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.signal-inner {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+.signal-label {
+
+    margin: 0 0 4rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.4;
+
+}
+
+
+.signal-title {
+
+    max-width: 1000px;
+
     margin: 0;
 
-    font-family: var(--font-display);
-
     font-size: clamp(
-        3rem,
+        4rem,
         10vw,
         10rem
     );
 
     line-height: 0.85;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -0.07em;
 
-    font-weight: 800;
-}
-
-.hero-title span {
-    color: var(--color-accent);
-}
-
-.hero-description {
-    margin: 0;
-
-    font-size: clamp(
-        1rem,
-        2vw,
-        1.5rem
-    );
-
-    color: var(--color-text-muted);
 }
 
 
-/* =========================================
-   ENTER BUTTON
-========================================= */
+.signal-title span {
 
-.enter-button {
-    display: flex;
+    display: block;
 
-    align-items: center;
+    opacity: 0.25;
 
-    gap: 1rem;
-
-    padding: 1rem 0;
-
-    color: var(--color-text);
-
-    font-size: 0.75rem;
-
-    letter-spacing: 0.15em;
-
-    transition:
-        color var(--transition-fast),
-        transform var(--transition-fast);
-}
-
-.enter-button:hover {
-    color: var(--color-accent);
-
-    transform: translateX(8px);
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+.signal-line {
 
-.hero-footer {
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        6rem
+        0
+        3rem;
+
+    background: currentColor;
+
+    opacity: 0.2;
+
+}
+
+
+.signal-description {
+
+    max-width: 600px;
+
+    margin: 0 0 1.5rem;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    opacity: 0.5;
+
+}
+
+
+.signal-meta {
+
     display: flex;
 
     justify-content: space-between;
 
-    color: var(--color-text-muted);
+    margin-top: 6rem;
+
+    font-family: monospace;
 
     font-size: 0.6rem;
 
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
 
-    border-top:
-        1px solid var(--color-border);
+    opacity: 0.35;
 
-    padding-top: 1rem;
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 1.25rem;
-    }
-
-    .hero-title {
-        font-size: clamp(
-            3rem,
-            16vw,
-            6rem
-        );
-    }
-
-    .hero-footer {
-        flex-wrap: wrap;
-
-        gap: 0.75rem;
-    }
-
-
-
-    /* =========================================
-   WORK / ARCHIVE
-   ========================================= */
+/* =========================================================
+   WORK SECTION
+   ========================================================= */
 
 .work {
 
     min-height: 100vh;
 
-    padding: 8rem 2rem;
-
-    position: relative;
+    padding:
+        10rem
+        2rem;
 
 }
 
@@ -310,15 +539,13 @@
 }
 
 
-/* HEADER */
-
 .work-header {
 
     display: flex;
 
-    align-items: flex-end;
-
     justify-content: space-between;
+
+    align-items: flex-end;
 
     margin-bottom: 6rem;
 
@@ -327,15 +554,15 @@
 
 .work-label {
 
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
 
     font-family: monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 
     letter-spacing: 0.2em;
 
-    opacity: 0.45;
+    opacity: 0.4;
 
 }
 
@@ -352,9 +579,7 @@
 
     line-height: 0.85;
 
-    letter-spacing: -0.06em;
-
-    text-transform: uppercase;
+    letter-spacing: -0.07em;
 
 }
 
@@ -363,7 +588,7 @@
 
     display: block;
 
-    opacity: 0.3;
+    opacity: 0.25;
 
 }
 
@@ -372,48 +597,46 @@
 
     font-family: monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.65rem;
 
-    letter-spacing: 0.15em;
-
-    opacity: 0.4;
+    opacity: 0.35;
 
 }
 
 
-/* PROJECT LIST */
+/* =========================================================
+   PROJECT LIST
+   ========================================================= */
 
 .project-list {
 
     border-top: 1px solid currentColor;
-
-    opacity: 0.95;
 
 }
 
 
 .project {
 
+    min-height: 240px;
+
     display: grid;
 
     grid-template-columns:
-        80px
+        100px
         1fr
-        40px;
+        80px;
 
     gap: 2rem;
 
     align-items: center;
 
-    padding: 3rem 0;
-
     border-bottom: 1px solid currentColor;
 
-    opacity: 0.65;
+    opacity: 0.6;
 
     transition:
         opacity 0.3s ease,
-        transform 0.3s ease;
+        padding 0.4s ease;
 
     cursor: pointer;
 
@@ -424,7 +647,8 @@
 
     opacity: 1;
 
-    transform: translateX(12px);
+    padding:
+        0 1rem;
 
 }
 
@@ -433,26 +657,24 @@
 
     font-family: monospace;
 
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 
-    letter-spacing: 0.1em;
-
-    opacity: 0.5;
+    opacity: 0.4;
 
 }
 
 
 .project-type {
 
-    margin: 0 0 0.75rem;
+    margin: 0 0 1rem;
 
     font-family: monospace;
 
-    font-size: 0.65rem;
+    font-size: 0.6rem;
 
     letter-spacing: 0.15em;
 
-    opacity: 0.45;
+    opacity: 0.4;
 
 }
 
@@ -463,20 +685,20 @@
 
     font-size: clamp(
         2rem,
-        4vw,
-        4rem
+        5vw,
+        5rem
     );
 
-    line-height: 0.9;
+    line-height: 0.85;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
 
 }
 
 
 .project-title span {
 
-    opacity: 0.35;
+    opacity: 0.3;
 
 }
 
@@ -485,20 +707,20 @@
 
     max-width: 500px;
 
-    margin: 1.25rem 0 0;
+    margin: 1.5rem 0 0;
 
-    font-size: 0.95rem;
+    font-size: 0.8rem;
 
     line-height: 1.6;
 
-    opacity: 0.5;
+    opacity: 0.4;
 
 }
 
 
 .project-arrow {
 
-    font-size: 1.5rem;
+    font-size: 2rem;
 
     transition:
         transform 0.3s ease;
@@ -508,12 +730,11 @@
 
 .project:hover .project-arrow {
 
-    transform: translateX(8px);
+    transform:
+        translateX(8px);
 
 }
 
-
-/* FOOTER */
 
 .work-footer {
 
@@ -521,11 +742,873 @@
 
     justify-content: space-between;
 
-    margin-top: 3rem;
+    margin-top: 2rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.3;
+
+}
+
+
+/* =========================================================
+   CREATIVE LAB
+   ========================================================= */
+
+.lab {
+
+    min-height: 100vh;
+
+    padding:
+        10rem
+        2rem;
+
+}
+
+
+.lab-inner {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+.lab-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 5rem;
+
+}
+
+
+.lab-label {
+
+    margin: 0 0 1rem;
 
     font-family: monospace;
 
     font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.4;
+
+}
+
+
+.lab-title {
+
+    margin: 0;
+
+    font-size: clamp(
+        3rem,
+        8vw,
+        8rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.07em;
+
+}
+
+
+.lab-title span {
+
+    display: block;
+
+    opacity: 0.25;
+
+}
+
+
+.lab-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+.lab-status-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    animation:
+        statusPulse 2s infinite;
+
+}
+
+
+.lab-intro {
+
+    max-width: 650px;
+
+    margin-bottom: 6rem;
+
+}
+
+
+.lab-intro p {
+
+    margin: 0 0 1rem;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    opacity: 0.5;
+
+}
+
+
+/* =========================================================
+   EXPERIMENT GRID
+   ========================================================= */
+
+.experiment-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr;
+
+    gap: 1rem;
+
+}
+
+
+.experiment {
+
+    min-height: 400px;
+
+    padding: 2rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid currentColor;
+
+    opacity: 0.65;
+
+    transition:
+        opacity 0.3s ease;
+
+}
+
+
+.experiment:hover {
+
+    opacity: 1;
+
+}
+
+
+.experiment-large {
+
+    grid-row:
+        span 2;
+
+    min-height: 820px;
+
+}
+
+
+.experiment-number {
+
+    position: absolute;
+
+    top: 2rem;
+
+    left: 2rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.4;
+
+}
+
+
+.experiment-visual {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   EXPERIMENT VISUAL 01
+   ========================================================= */
+
+.experiment-orbit {
+
+    width: 220px;
+
+    height: 220px;
+
+    border: 1px solid currentColor;
+
+    border-radius: 50%;
+
+    animation:
+        orbitSpin 12s linear infinite;
+
+}
+
+
+.experiment-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border: 1px solid currentColor;
+
+    border-radius: 50%;
+
+}
+
+
+.experiment-core {
+
+    position: absolute;
+
+    font-family: monospace;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+@keyframes orbitSpin {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   EXPERIMENT VISUAL 02
+   ========================================================= */
+
+.experiment-grid-lines {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            currentColor 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            currentColor 1px,
+            transparent 1px
+        );
+
+    background-size:
+        40px 40px;
+
+    opacity: 0.08;
+
+}
+
+
+.experiment-cross {
+
+    font-size: 5rem;
+
+    font-weight: 100;
+
+    opacity: 0.4;
+
+    animation:
+        crossPulse 3s ease-in-out infinite;
+
+}
+
+
+@keyframes crossPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.2)
+            rotate(45deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   EXPERIMENT VISUAL 03
+   ========================================================= */
+
+.experiment-scan {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: currentColor;
+
+    opacity: 0.4;
+
+    animation:
+        scanLine 3s linear infinite;
+
+}
+
+
+@keyframes scanLine {
+
+    0% {
+
+        transform:
+            translateY(-200px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(200px);
+
+    }
+
+}
+
+
+.experiment-text {
+
+    font-family: monospace;
+
+    font-size: 2rem;
+
+    letter-spacing: 0.3em;
+
+    opacity: 0.5;
+
+}
+
+
+.experiment-info {
+
+    position: absolute;
+
+    left: 2rem;
+
+    bottom: 2rem;
+
+    z-index: 2;
+
+}
+
+
+.experiment-info p {
+
+    margin: 0 0 0.75rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+.experiment-info h3 {
+
+    margin: 0;
+
+    font-size: 2rem;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.experiment-info h3 span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+.lab-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 2rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.3;
+
+}
+
+
+/* =========================================================
+   ABOUT / USER PROFILE
+   ========================================================= */
+
+.about {
+
+    min-height: 100vh;
+
+    padding:
+        10rem
+        2rem;
+
+    position: relative;
+
+}
+
+
+.about-inner {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ABOUT HEADER */
+
+.about-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 7rem;
+
+}
+
+
+.about-label,
+.about-status {
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+/* ABOUT MAIN */
+
+.about-main {
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr;
+
+    gap: 8rem;
+
+    align-items: end;
+
+}
+
+
+.about-kicker {
+
+    margin:
+        0
+        0
+        1.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.45;
+
+}
+
+
+.about-title {
+
+    margin: 0;
+
+    font-size: clamp(
+        3rem,
+        7vw,
+        7rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+}
+
+
+.about-title span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+.about-description {
+
+    max-width: 500px;
+
+}
+
+
+.about-description p {
+
+    margin:
+        0
+        0
+        1.5rem;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    opacity: 0.55;
+
+}
+
+
+/* ABOUT DIVIDER */
+
+.about-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        8rem
+        0
+        4rem;
+
+    background: currentColor;
+
+    opacity: 0.2;
+
+}
+
+
+/* ABOUT CARDS */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    border: 1px solid currentColor;
+
+}
+
+
+.about-card {
+
+    min-height: 350px;
+
+    padding: 2rem;
+
+    position: relative;
+
+    border-right: 1px solid currentColor;
+
+    opacity: 0.65;
+
+    transition:
+        opacity 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.about-card:last-child {
+
+    border-right: none;
+
+}
+
+
+.about-card:hover {
+
+    opacity: 1;
+
+}
+
+
+.about-card-number {
+
+    display: block;
+
+    margin-bottom: 5rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    opacity: 0.4;
+
+}
+
+
+.about-card-label {
+
+    margin:
+        0
+        0
+        1rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+.about-card h3 {
+
+    margin: 0;
+
+    font-size: 2rem;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.about-card h3 span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+.about-card-text {
+
+    max-width: 280px;
+
+    margin:
+        2rem
+        0
+        0;
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+
+    opacity: 0.45;
+
+}
+
+
+/* =========================================================
+   ABOUT TOOLKIT
+   ========================================================= */
+
+.about-stack {
+
+    margin-top: 7rem;
+
+}
+
+
+.about-stack-label {
+
+    margin-bottom: 1.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+.about-stack-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+}
+
+
+.about-stack-list span {
+
+    padding:
+        0.7rem
+        1rem;
+
+    border: 1px solid currentColor;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0.5;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.about-stack-list span:hover {
+
+    opacity: 1;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================================
+   ABOUT FOOTER
+   ========================================================= */
+
+.about-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 7rem;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid currentColor;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
 
     letter-spacing: 0.15em;
 
@@ -534,22 +1617,139 @@
 }
 
 
-/* =========================================
-   WORK MOBILE
-   ========================================= */
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+
+
+    /* HERO */
+
+    .hero {
+
+        padding:
+            1.25rem;
+
+    }
+
+
+    .hero-title {
+
+        font-size:
+            clamp(
+                3.5rem,
+                16vw,
+                7rem
+            );
+
+    }
+
+
+    .hero-footer {
+
+        gap: 1rem;
+
+    }
+
+
+    /* SIGNAL */
+
+    .signal {
+
+        padding:
+            7rem
+            1.25rem;
+
+    }
+
+
+    .signal-title {
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                6rem
+            );
+
+    }
+
+
+    .signal-meta {
+
+        flex-direction: column;
+
+        gap: 1rem;
+
+    }
+
+
+    /* WORK */
 
     .work {
 
         padding:
-            6rem
+            7rem
             1.25rem;
 
     }
 
 
     .work-header {
+
+        margin-bottom: 4rem;
+
+    }
+
+
+    .project {
+
+        min-height: 200px;
+
+        grid-template-columns:
+            40px
+            1fr
+            30px;
+
+        gap: 1rem;
+
+    }
+
+
+    .project:hover {
+
+        padding: 0;
+
+    }
+
+
+    .project-description {
+
+        font-size: 0.75rem;
+
+    }
+
+
+    .project-arrow {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    /* LAB */
+
+    .lab {
+
+        padding:
+            7rem
+            1.25rem;
+
+    }
+
+
+    .lab-header {
 
         align-items: flex-start;
 
@@ -558,50 +1758,87 @@
     }
 
 
-    .work-index {
+    .experiment-grid {
 
-        display: none;
-
-    }
-
-
-    .project {
-
-        grid-template-columns:
-            40px
-            1fr
-            20px;
-
-        gap: 1rem;
-
-        padding: 2.5rem 0;
+        grid-template-columns: 1fr;
 
     }
 
 
-    .project-title {
+    .experiment-large {
 
-        font-size: 2.25rem;
+        grid-row: auto;
 
-    }
-
-
-    .project-description {
-
-        font-size: 0.85rem;
+        min-height: 500px;
 
     }
 
 
-    .work-footer {
+    .experiment {
+
+        min-height: 350px;
+
+    }
+
+
+    /* ABOUT */
+
+    .about {
+
+        padding:
+            7rem
+            1.25rem;
+
+    }
+
+
+    .about-header {
+
+        margin-bottom: 5rem;
+
+    }
+
+
+    .about-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 4rem;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-card {
+
+        min-height: 300px;
+
+        border-right: none;
+
+        border-bottom: 1px solid currentColor;
+
+    }
+
+
+    .about-card:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .about-footer {
 
         flex-direction: column;
 
-        gap: 0.75rem;
+        gap: 1rem;
 
     }
 
 }
-
-}
-
