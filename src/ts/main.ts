@@ -13,3 +13,37 @@ setTimeout(() => {
         bootScreen.style.pointerEvents = "none";
     }
 }, 3000);
+
+// =========================================================
+// NAVIGATION SCROLL STATE
+// =========================================================
+
+const siteNav = document.getElementById("site-nav");
+
+if (siteNav) {
+
+    const updateNavigationState = (): void => {
+
+        if (window.scrollY <= 10) {
+
+            siteNav.classList.add("at-top");
+
+        } else {
+
+            siteNav.classList.remove("at-top");
+
+        }
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateNavigationState,
+        { passive: true }
+    );
+
+
+    updateNavigationState();
+
+}
