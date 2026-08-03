@@ -47,3 +47,40 @@ if (siteNav) {
     updateNavigationState();
 
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.body.classList.add("page-ready");
+
+
+    const projectLinks =
+        document.querySelectorAll<HTMLAnchorElement>(
+            'a[href*="/projects/"]'
+        );
+
+
+    projectLinks.forEach((link) => {
+
+        link.addEventListener("click", (event) => {
+
+            const href = link.getAttribute("href");
+
+            if (!href) {
+                return;
+            }
+
+            event.preventDefault();
+
+            document.body.classList.add("page-leaving");
+
+            setTimeout(() => {
+
+                window.location.href = href;
+
+            }, 500);
+
+        });
+
+    });
+
+});

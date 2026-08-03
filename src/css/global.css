@@ -1,5 +1,9 @@
+
+
 html {
     background: var(--color-background);
+
+    background: #050505;
 }
 
 body {
@@ -17,6 +21,10 @@ body {
     font-family: var(--font-mono);
 
     overflow-x: hidden;
+
+     background: #050505;
+
+    color: #f1f1f1;
 }
 
 
