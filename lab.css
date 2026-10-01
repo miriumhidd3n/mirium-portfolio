@@ -1,0 +1,554 @@
+/* =========================================
+   CREATIVE LAB
+   ========================================= */
+
+.lab {
+
+    min-height: 100vh;
+
+    padding: 10rem 2rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.lab-inner {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================
+   LAB HEADER
+   ========================================= */
+
+.lab-header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 5rem;
+
+}
+
+
+.lab-label {
+
+    margin: 0 0 1.5rem;
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.2em;
+
+    opacity: 0.45;
+
+}
+
+
+.lab-title {
+
+    margin: 0;
+
+    font-size: clamp(
+        3rem,
+        8vw,
+        8rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+.lab-title span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+.lab-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.5;
+
+}
+
+
+.lab-status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+}
+
+
+/* =========================================
+   LAB INTRO
+   ========================================= */
+
+.lab-intro {
+
+    max-width: 650px;
+
+    margin-bottom: 6rem;
+
+}
+
+
+.lab-intro p {
+
+    margin: 0 0 1rem;
+
+    font-size: clamp(
+        1rem,
+        1.5vw,
+        1.25rem
+    );
+
+    line-height: 1.6;
+
+    opacity: 0.55;
+
+}
+
+
+/* =========================================
+   EXPERIMENT GRID
+   ========================================= */
+
+.experiment-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1rem;
+
+}
+
+
+.experiment {
+
+    min-height: 420px;
+
+    padding: 1.5rem;
+
+    position: relative;
+
+    border: 1px solid currentColor;
+
+    overflow: hidden;
+
+    opacity: 0.7;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+}
+
+
+.experiment:hover {
+
+    opacity: 1;
+
+    transform: translateY(-8px);
+
+}
+
+
+.experiment-large {
+
+    grid-column: span 2;
+
+    min-height: 550px;
+
+}
+
+
+/* =========================================
+   EXPERIMENT NUMBER
+   ========================================= */
+
+.experiment-number {
+
+    position: relative;
+
+    z-index: 3;
+
+    font-family: monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+/* =========================================
+   EXPERIMENT VISUAL
+   ========================================= */
+
+.experiment-visual {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* ORBIT */
+
+.experiment-orbit {
+
+    width: 220px;
+
+    height: 220px;
+
+    border: 1px solid currentColor;
+
+    border-radius: 50%;
+
+    animation:
+        lab-orbit 12s linear infinite;
+
+}
+
+
+.experiment-core {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 70px;
+
+    height: 70px;
+
+    border: 1px solid currentColor;
+
+    border-radius: 50%;
+
+    font-family: monospace;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.1em;
+
+}
+
+
+/* GRID */
+
+.experiment-grid-lines {
+
+    width: 70%;
+
+    height: 70%;
+
+    background-image:
+        linear-gradient(
+            currentColor 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            currentColor 1px,
+            transparent 1px
+        );
+
+    background-size:
+        30px 30px;
+
+    opacity: 0.15;
+
+}
+
+
+.experiment-cross {
+
+    position: absolute;
+
+    font-size: 4rem;
+
+    font-weight: 100;
+
+    opacity: 0.5;
+
+}
+
+
+/* SCAN */
+
+.experiment-scan {
+
+    width: 80%;
+
+    height: 1px;
+
+    background: currentColor;
+
+    opacity: 0.5;
+
+    animation:
+        lab-scan 3s ease-in-out infinite;
+
+}
+
+
+.experiment-text {
+
+    position: absolute;
+
+    font-family: monospace;
+
+    font-size: 2rem;
+
+    letter-spacing: 0.4em;
+
+    opacity: 0.2;
+
+}
+
+
+/* =========================================
+   EXPERIMENT INFO
+   ========================================= */
+
+.experiment-info {
+
+    position: absolute;
+
+    left: 1.5rem;
+
+    right: 1.5rem;
+
+    bottom: 1.5rem;
+
+    z-index: 3;
+
+}
+
+
+.experiment-info p {
+
+    margin: 0 0 0.75rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.4;
+
+}
+
+
+.experiment-info h3 {
+
+    margin: 0;
+
+    font-size: clamp(
+        1.75rem,
+        3vw,
+        3rem
+    );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.experiment-info h3 span {
+
+    display: block;
+
+    opacity: 0.3;
+
+}
+
+
+/* =========================================
+   LAB FOOTER
+   ========================================= */
+
+.lab-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 3rem;
+
+    font-family: monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.15em;
+
+    opacity: 0.35;
+
+}
+
+
+/* =========================================
+   LAB ANIMATIONS
+   ========================================= */
+
+@keyframes lab-orbit {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes lab-scan {
+
+    0% {
+
+        transform:
+            translateY(-120px);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        opacity: 0.5;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(120px);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   LAB MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .lab {
+
+        padding:
+            7rem
+            1.25rem;
+
+    }
+
+
+    .lab-header {
+
+        align-items: flex-start;
+
+        gap: 2rem;
+
+    }
+
+
+    .experiment-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .experiment-large {
+
+        grid-column: span 1;
+
+        min-height: 420px;
+
+    }
+
+
+    .experiment {
+
+        min-height: 350px;
+
+    }
+
+
+    .lab-footer {
+
+        flex-direction: column;
+
+        gap: 0.75rem;
+
+    }
+
+}
